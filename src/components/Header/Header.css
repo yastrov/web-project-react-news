@@ -1,0 +1,124 @@
+.header {
+    background: #222;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+
+.header-logo {
+    background-color: white;
+    padding: 6px 18px 6px 18px;
+    border-radius: 8px;
+    opacity: 0.8;
+    margin-left: 20px;
+}
+
+.header-logo a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    text-decoration: none;
+    color: black;
+}
+
+.header-name {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.header-icon {
+    height: 50px;
+    width: 50px;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 18px;
+    padding: 8px 32px 16px 32px;
+    border-radius: 10px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    font-size: 17px;
+    padding: 8px 16px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-link:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: white;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 70%;
+}
+
+.nav-link--active {
+    font-weight: 600 !important;
+}
+
+.nav-link--active::after {
+    width: 50% !important;
+}
+
+@media (max-width: 800px) {
+    .header-logo {
+        padding: 3px 12px 3px 12px;
+    }
+    .header-logo a {
+        gap: 10px;
+    }
+    .header-name {
+        font-size: 18px;
+    }
+    .header-icon {
+        height: 40px;
+        width: 40px;
+    }
+    .nav-list {
+        gap: 18px;
+        padding: 6px 26px 6px 16px;
+    }
+    .nav-link {
+        font-size: 15px;
+    }
+}
+
+
+@media (max-width: 550px) {
+    .header {
+        padding: 20px 0;
+        gap: 10px;
+        flex-direction: column;
+        height: 80px;
+    }
+    .header-logo {
+        padding: 3px 12px 3px 12px;
+    }
+    .header-logo a {
+        gap: 10px;
+    }
+}
