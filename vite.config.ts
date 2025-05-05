@@ -4,9 +4,14 @@ import react from '@vitejs/plugin-react'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: './',
+  base: '/web-project-react-news/',  // Для GitHub Pages
   build: {
     outDir: 'dist',
-    emptyOutDir: true,
+    manifest: true,  // Генерирует asset-manifest.json
+    rollupOptions: {
+      input: {
+        main: './index.html'  // Точка входа
+      }
+    }
   }
 })
